@@ -38,3 +38,12 @@
 button:hover{
     background: #1ac8aa;
 }
+.is-invalid{
+    border-color: #dc3545 1px solid;
+    color: #dc3545
+}
+.invalid-feedback{
+    color: #dc3545;
+    font-family: monospace;
+    font-size: 14px;
+}

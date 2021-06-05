@@ -1,1 +1,18 @@
-<p>search works!</p>
+<div class="container">
+  <div class="search-container">
+    <input type="text" placeholder="Type Book name" [formControl]="query" />
+    <button (click)="onClick()">Search</button>
+  </div>
+</div>
+<div class="lists" *ngIf="list">
+    <div *ngFor="let item of items" class="collections">
+      <img [src]="item.thumb" />
+      <span>{{ item.title }}</span>
+      <span>{{ item.subtitle }}</span>
+      <button
+        type="submit"
+      >
+        Lend the Book
+      </button>
+    </div>
+  </div>

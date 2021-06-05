@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  .search-container {
+    width: 50%;
+    input {
+      font-family: monospace;
+      outline: 0;
+      background: #f2f2f2;
+      width: 100%;
+      border: 0;
+      margin: 0 0 15px;
+      padding: 15px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+    button {
+      font-family: monospace;
+      background: #00ffd3;
+      outline: 0;
+      width: 100%;
+      border: 0;
+      padding: 15px;
+      color: #333;
+      border-radius: 10px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+}
+.lists {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  .collections {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    img {
+      height: 300px;
+      width: 300px;
+    }
+  }
+}

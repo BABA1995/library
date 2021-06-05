@@ -1,7 +1,49 @@
 <div class="form">
-    <form class="login-form">
-        <input type="text" placeholder="username">
-        <input type="password" placeholder="password">
-        <button (click)="onlogin()">Login</button>
-    </form>
+  <div class="login-form">
+    
+    <input
+      type="text"
+      placeholder="username"
+      [formControl]="name"
+      [ngClass]="{
+        'is-invalid': name.invalid && (name.dirty || name.touched)
+      }"
+    />
+    <div
+      class="invalid-feedback"
+      *ngIf="name.invalid && (name.dirty || name.touched)"
+    >
+      <div *ngIf="name.errors?.required">Username is required.</div>
+      <div *ngIf="name.errors?.minlength">
+        Username accepts minimu 6 characters
+      </div>
+      <div *ngIf="name.errors?.maxlength">
+        Username accepts maximum 15 characters
+      </div>
+      <div *ngIf="name.errors?.pattern">username starts with 6 alphabets</div>
+    </div>
+    <input
+      type="password"
+      placeholder="password"
+      [formControl]="password"
+      [ngClass]="{
+        'is-invalid': password.invalid && (password.dirty || password.touched)
+      }"
+    />
+    <div
+      class="invalid-feedback"
+      *ngIf="password.invalid && (password.dirty || password.touched)"
+    >
+      <div *ngIf="password.errors?.required">password is required.</div>
+      <div *ngIf="password.errors?.minlength">
+        Password accepts minimu 6 characters
+      </div>
+      <div *ngIf="password.errors?.maxlength">
+        Password accepts maximum 8 characters
+      </div>
+      <div *ngIf="password.errors?.pattern">passwords starts with 6 alphabets</div>
+    </div>
+    <button (click)="onlogin()">Login</button>
+   
+  </div>
 </div>
